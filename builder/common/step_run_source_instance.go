@@ -185,7 +185,7 @@ func (s *StepRunSourceInstance) Run(ctx context.Context, state multistep.StateBa
 
 	subnetId := state.Get("subnet_id").(string)
 
-	if subnetId != "" && s.AssociatePublicIpAddress {
+	if subnetId != "" {
 		runOpts.NetworkInterfaces = []*ec2.InstanceNetworkInterfaceSpecification{
 			{
 				DeviceIndex:              aws.Int64(0),
